@@ -6,7 +6,7 @@
 - Акиньшина Анна
 
 ## Документация: 
-
+* [ТЗ](https://github.com/kvasovaM/SupplSearch/blob/master/Техническое%20задание.docx)
 ## Связанные ссылки:
 
 * Доска на Trello: [SupplSearch](https://trello.com/b/96hKmHXz/проект-по-тп)
