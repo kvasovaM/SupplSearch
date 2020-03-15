@@ -6,9 +6,10 @@
 - Акиньшина Анна
 
 ## Документация: 
-* [ТЗ](https://github.com/kvasovaM/SupplSearch/blob/master/Техническое%20задание.docx)
-* [Курсовой проект](https://github.com/kvasovaM/SupplSearch/blob/master/Курсовой%20проект.docx)
-## Связанные ссылки:
+* [ТЗ pdf](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Техническое%20задание.pdf)
+* [ТЗ docx](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Техническое%20задание.docx)
+* [Курсовой проект](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Курсовой%20проект.docx)
+## Доски команды:
 
-* Доска на Trello: [SupplSearch](https://trello.com/b/96hKmHXz/проект-по-тп)
-* Доска на Miro: [SupplSearch](https://miro.com/app/board/o9J_kvWp8H8=/)
+* [Trello](https://trello.com/b/96hKmHXz/проект-по-тп)
+* [Miro](https://miro.com/app/board/o9J_kvWp8H8=/)
