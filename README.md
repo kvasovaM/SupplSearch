@@ -6,6 +6,7 @@
 - Акиньшина Анна
 
 ## Документация: 
+* [Отчет по ролям pdf](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Отчет%20по%20ролям.pdf)
 * [ТЗ pdf](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Техническое%20задание.pdf)
 * [ТЗ docx](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Техническое%20задание.docx)
 * [Курсовой проект](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Курсовой%20проект.docx)
