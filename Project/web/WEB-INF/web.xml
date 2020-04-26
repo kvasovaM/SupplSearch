@@ -61,6 +61,27 @@
         <url-pattern>/customer</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>supply</servlet-name>
+        <servlet-class>app.servlets.SupplyServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>supply</servlet-name>
+        <url-pattern>/supply</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>request</servlet-name>
+        <servlet-class>app.servlets.RequestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>request</servlet-name>
+        <url-pattern>/request</url-pattern>
+    </servlet-mapping>
+
+
 
     <servlet>
         <servlet-name>exit</servlet-name>
@@ -80,6 +101,26 @@
     <servlet-mapping>
         <servlet-name>personalarea</servlet-name>
         <url-pattern>/personalarea</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addsupply</servlet-name>
+        <servlet-class>app.servlets.AddSupplyServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addsupply</servlet-name>
+        <url-pattern>/addsupply</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addrequest</servlet-name>
+        <servlet-class>app.servlets.AddRequestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addrequest</servlet-name>
+        <url-pattern>/addrequest</url-pattern>
     </servlet-mapping>
 
 </web-app>

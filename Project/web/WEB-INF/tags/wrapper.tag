@@ -15,7 +15,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-
+                <li class="nav-item">
+                    <a class="nav-link ${supply}" href="/supply">Предложения<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ${request}" href="/request">Запросы</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link ${supplier}" href="/supplier">Поставщики</a>
                 </li>

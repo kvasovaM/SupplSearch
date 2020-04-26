@@ -2,7 +2,7 @@ package app.domain;
 
 import app.domain.annotations.SQLinformationVariable;
 
-public abstract class AbstractUser extends Entity {
+public  class AbstractUser extends Entity {
 
    @SQLinformationVariable(name = "nameCompany", SQLtype = "VARCHAR(100)", SQLparams = "NOT NULL")
     protected String nameCompany;
