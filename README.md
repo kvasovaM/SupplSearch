@@ -16,5 +16,6 @@
 
 * [Trello](https://trello.com/b/96hKmHXz/проект-по-тп)
 * [Miro](https://miro.com/app/board/o9J_kvWp8H8=/)
-*[Swagger](https://s284996.savps.ru/api/ui)
+
+[Swagger](https://s284996.savps.ru/api/ui)
 
