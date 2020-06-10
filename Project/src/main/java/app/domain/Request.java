@@ -3,6 +3,7 @@ package app.domain;
 
 import app.domain.annotations.SQLinformationClass;
 import app.domain.annotations.SQLinformationVariable;
+import org.json.simple.JSONObject;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -21,7 +22,7 @@ public class Request extends Entity{
 
     @SQLinformationVariable(name = "order_quantity", SQLtype = "INT(20)")
     private BigDecimal orderQuantity;
-    @SQLinformationVariable(name = "order_frequency", SQLtype = "INT(20)")
+    @SQLinformationVariable(name = "order_frequency", SQLtype = "VARCHAR(100)")
     private String orderFrequency;
     @SQLinformationVariable(name = "description", SQLtype = "VARCHAR(100)")
     private String description;
@@ -110,11 +111,18 @@ public class Request extends Entity{
         this.placementDate = placementDate;
     }
 
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
 
+        json.put("id", getId());
+        json.put("customer_id", getCustomerId());
+        json.put("category", getCategory());
+        json.put("city", getCity());
+        json.put("amount", getOrderQuantity());
+        json.put("frequency", getOrderFrequency());
+        json.put("description", getDescription());
+        json.put("date", getPlacementDate());
 
-
-
-
-
-
+        return json;
+    }
 }

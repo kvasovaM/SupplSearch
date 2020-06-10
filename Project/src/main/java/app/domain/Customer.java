@@ -2,6 +2,7 @@ package app.domain;
 
 import app.domain.annotations.SQLinformationClass;
 import app.domain.annotations.SQLinformationVariable;
+import org.json.simple.JSONObject;
 
 @SQLinformationClass(name = "customer")
 public class Customer extends AbstractUser {
@@ -14,22 +15,23 @@ public class Customer extends AbstractUser {
     private String contacts;
 
 
-    public Customer(String nameCompany, String login, String password) {
-        super(nameCompany, login, password);
+    public Customer(String nameCompany, String login, String password, String apikey) {
+        super(nameCompany, login, password, apikey);
         this.aboutCompany = "";
         this.aboutProcurement = "";
         this.contacts = "";
     }
 
-    public Customer(String nameCompany, String login, String password, String aboutCompany, String aboutProcurement, String contacts) {
-        super(nameCompany, login, password);
+    public Customer(String nameCompany, String login, String password, String aboutCompany, String aboutProcurement,
+                    String contacts, String apikey) {
+        super(nameCompany, login, password, apikey);
         this.aboutCompany = aboutCompany;
-        this.aboutProcurement= aboutProcurement;
+        this.aboutProcurement = aboutProcurement;
         this.contacts = contacts;
     }
 
-    public  Customer()
-    {}
+    public Customer() {
+    }
 
     public String getNameCompany() {
         return nameCompany;
@@ -62,5 +64,17 @@ public class Customer extends AbstractUser {
 
     public void setContacts(String contacts) {
         this.contacts = contacts;
+    }
+
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+
+        json.put("id", getId());
+        json.put("name", getNameCompany());
+        json.put("about", getAboutCompany());
+        json.put("procurement", getAboutProcurement());
+        json.put("contacts", getContacts());
+
+        return json;
     }
 }

@@ -14,22 +14,27 @@ import java.util.List;
 
 public class SupplierServlet extends HttpServlet {
     SupplierService supplierServices = new SupplierService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Supplier> suppliers = supplierServices.getAll();
+
+        String filterNameCompany = req.getParameter("nameCompany");
 
         List<String> nameCompany = new ArrayList<>();
         List<String> aboutCompany = new ArrayList<>();
         List<String> aboutProduction = new ArrayList<>();
         List<String> contacts = new ArrayList<>();
         String str = "";
-        for (Supplier u : suppliers)
-        {
+        for (Supplier u : suppliers) {
+            if (filterNameCompany != null && !filterNameCompany.isEmpty() && !u.getNameCompany().contains(filterNameCompany))
+                continue;
+
             str += "<tr><td>" +
                     u.getNameCompany() + "</td><td>" +
                     u.getAboutCompany() + "</td><td>" +
                     u.getAboutProduction() + "</td><td>" +
-                    u.getContacts()+ "</td></tr>";
+                    u.getContacts() + "</td></tr>";
             nameCompany.add(u.getNameCompany());
             aboutCompany.add(u.getAboutCompany());
             aboutProduction.add(u.getAboutProduction());

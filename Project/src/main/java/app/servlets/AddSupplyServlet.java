@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Date;
 
-
 public class AddSupplyServlet extends HttpServlet {
     SupplyService supplyServices = new SupplyService();
     SupplierService supplierServices = new SupplierService();

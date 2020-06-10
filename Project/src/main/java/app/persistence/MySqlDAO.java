@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Map;
 
 public class MySqlDAO<T extends Entity> implements DAO<T> {
-    private static final String url = "jdbc:mysql://localhost:3306/labor_exchange?useSSL=false&serverTimezone=UTC";
-    private static final String user = "root";
-    private static final String password = "mysql -uroot";
+    private static final String url = "jdbc:mysql://localhost:3306/labor_exchange?useSSL=false&serverTimezone=UTC&characterEncoding=utf8";
+    private static final String user = "test";
+    private static final String password = "qwerty";
 
     private Connection con;
     private Statement stmt;

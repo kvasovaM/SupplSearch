@@ -2,6 +2,7 @@ package app.domain;
 
 import app.domain.annotations.SQLinformationClass;
 import app.domain.annotations.SQLinformationVariable;
+import org.json.simple.JSONObject;
 
 
 import java.util.Date;
@@ -84,7 +85,16 @@ public class Supply extends Entity{
         this.placementDate = placementDate;
     }
 
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
 
+        json.put("id", getId());
+        json.put("supplier_id", getSupplierId());
+        json.put("category", getCategory());
+        json.put("city", getCity());
+        json.put("description", getDescription());
+        json.put("date", getPlacementDate());
 
-
+        return json;
+    }
 }

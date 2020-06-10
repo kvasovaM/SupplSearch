@@ -14,7 +14,7 @@ public class CustomerService extends AbstractUserService {
 
 
     public boolean registration(String nameCompany, String login, String password) {
-        Customer customer = new Customer(nameCompany, login, password);
+        Customer customer = new Customer(nameCompany, login, password, this.generateApiKey());
         HashMap<String, Object> equilMap = new HashMap<>();
         equilMap.put("login", login);
         List<Customer> customers = customerDAO.readByParams(null, null, equilMap);
@@ -52,9 +52,17 @@ public class CustomerService extends AbstractUserService {
         return customerDAO.readById(id);
     }
 
+    public Customer getByApiKey(String apikey) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("apikey", apikey);
+        List<Customer> customers = customerDAO.readByParams(null, null, map);
+        return customers.isEmpty() ? null : customers.get(0);
+    }
 
-    public void change(Long id, String nameCompany, String login, String password, String aboutCompany, String aboutProcurement, String contacts) {
-        Customer customer = new Customer(nameCompany, login, password,  aboutCompany, aboutProcurement, contacts );
+
+    public void change(Long id, String nameCompany, String login, String password, String aboutCompany,
+                       String aboutProcurement, String contacts, String apikey) {
+        Customer customer = new Customer(nameCompany, login, password,  aboutCompany, aboutProcurement, contacts, apikey);
         customer.setId(id);
         try {
             customerDAO.update(customer);

@@ -23,7 +23,7 @@ public class PersonalArea extends HttpServlet {
         Long id = (Long) session.getAttribute("id");
         String login = (String) session.getAttribute("login");
         String role = (String) session.getAttribute("type");
-        if(role.equals("customer")) {
+        if (role.equals("customer")) {
             Customer customer = customerServices.getById(id);
             String password = req.getParameter("password");
             if (!password.equals(""))
@@ -31,9 +31,10 @@ public class PersonalArea extends HttpServlet {
             customer.setNameCompany(new String(req.getParameter("nameCompany").getBytes("ISO-8859-1"), "UTF-8"));
             customer.setAboutCompany(new String(req.getParameter("aboutCompany").getBytes("ISO-8859-1"), "UTF-8"));
             customer.setAboutProcurement(new String(req.getParameter("aboutProcurement").getBytes("ISO-8859-1"), "UTF-8"));
-            customerServices.change(customer.getId(), customer.getNameCompany(), customer.getLogin(), customer.getPassword(), customer.getAboutCompany(), customer.getAboutProcurement(), customer.getContacts());
-        } else
-        {
+            customer.setContacts(new String(req.getParameter("contacts").getBytes("ISO-8859-1"), "UTF-8"));
+            customerServices.change(customer.getId(), customer.getNameCompany(), customer.getLogin(), customer.getPassword(),
+                    customer.getAboutCompany(), customer.getAboutProcurement(), customer.getContacts(), customer.getApikey());
+        } else {
             Supplier supplier = supplierServices.getById(id);
             String password = req.getParameter("password");
             if (!password.equals(""))
@@ -41,7 +42,9 @@ public class PersonalArea extends HttpServlet {
             supplier.setNameCompany(new String(req.getParameter("nameCompany").getBytes("ISO-8859-1"), "UTF-8"));
             supplier.setAboutCompany(new String(req.getParameter("aboutCompany").getBytes("ISO-8859-1"), "UTF-8"));
             supplier.setAboutProduction(new String(req.getParameter("aboutProduction").getBytes("ISO-8859-1"), "UTF-8"));
-            supplierServices.change(supplier.getId(), supplier.getNameCompany(), supplier.getLogin(), supplier.getPassword(), supplier.getAboutCompany(), supplier.getAboutProduction(), supplier.getContacts());
+            supplier.setContacts(new String(req.getParameter("contacts").getBytes("ISO-8859-1"), "UTF-8"));
+            supplierServices.change(supplier.getId(), supplier.getNameCompany(), supplier.getLogin(), supplier.getPassword(),
+                    supplier.getAboutCompany(), supplier.getAboutProduction(), supplier.getContacts(), supplier.getApikey());
         }
         resp.sendRedirect("/personalarea");
     }
@@ -52,8 +55,9 @@ public class PersonalArea extends HttpServlet {
         Long id = (Long) session.getAttribute("id");
         String role = (String) session.getAttribute("type");
         if (role.equals("customer")) {
-            Customer customer =customerServices.getById(id);
+            Customer customer = customerServices.getById(id);
             req.setAttribute("id", customer.getId());
+            req.setAttribute("apikey", customer.getApikey());
             req.setAttribute("role", "customer");
             req.setAttribute("login", customer.getLogin());
             req.setAttribute("nameCompany", customer.getNameCompany());
@@ -62,17 +66,17 @@ public class PersonalArea extends HttpServlet {
             req.setAttribute("contacts", customer.getContacts());
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/personalarecustomer.jsp");
             requestDispatcher.forward(req, resp);
-        } else
-        {
+        } else {
             Supplier supplier = supplierServices.getById(id);
             req.setAttribute("id", supplier.getId());
-            req.setAttribute("role", "customer");
+            req.setAttribute("apikey", supplier.getApikey());
+            req.setAttribute("role", "supplier");
             req.setAttribute("login", supplier.getLogin());
             req.setAttribute("nameCompany", supplier.getNameCompany());
             req.setAttribute("aboutCompany", supplier.getAboutCompany());
             req.setAttribute("aboutProduction", supplier.getAboutProduction());
             req.setAttribute("contacts", supplier.getContacts());
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/personalaresupplier.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/personalareasupplier.jsp");
             requestDispatcher.forward(req, resp);
         }
     }

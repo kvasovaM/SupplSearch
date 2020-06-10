@@ -2,6 +2,7 @@ package app.domain;
 
 import app.domain.annotations.SQLinformationClass;
 import app.domain.annotations.SQLinformationVariable;
+import org.json.simple.JSONObject;
 
 @SQLinformationClass(name = "supplier")
 public class Supplier extends AbstractUser  {
@@ -14,15 +15,16 @@ public class Supplier extends AbstractUser  {
     private String contacts;
 
 
-    public Supplier(String nameCompany, String login, String password) {
-        super(nameCompany, login, password);
+    public Supplier(String nameCompany, String login, String password, String apikey) {
+        super(nameCompany, login, password, apikey);
         this.aboutCompany = "";
         this.aboutProduction = "";
         this.contacts = "";
     }
 
-    public Supplier(String nameCompany, String login, String password, String aboutCompany, String aboutProduction, String contacts) {
-        super(nameCompany, login, password);
+    public Supplier(String nameCompany, String login, String password, String aboutCompany, String aboutProduction,
+                    String contacts, String apikey) {
+        super(nameCompany, login, password, apikey);
         this.aboutCompany = aboutCompany;
         this.aboutProduction = aboutProduction;
         this.contacts = contacts;
@@ -54,7 +56,7 @@ public class Supplier extends AbstractUser  {
     }
 
     public void setAboutProduction(String aboutProduction) {
-        this.aboutCompany = aboutProduction;
+        this.aboutProduction = aboutProduction;
     }
 
     public String getContacts() {
@@ -63,5 +65,17 @@ public class Supplier extends AbstractUser  {
 
     public void setContacts(String contacts) {
         this.contacts = contacts;
+    }
+
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+
+        json.put("id", getId());
+        json.put("name", getNameCompany());
+        json.put("about", getAboutCompany());
+        json.put("production", getAboutProduction());
+        json.put("contacts", getContacts());
+
+        return json;
     }
 }

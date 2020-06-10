@@ -10,12 +10,14 @@ public abstract class AbstractUser extends Entity {
     @SQLinformationVariable(name = "login", SQLtype = "VARCHAR(100)", SQLparams = "NOT NULL")
     private String login;
 
+    @SQLinformationVariable(name = "apikey", SQLtype = "VARCHAR(100)", SQLparams = "NOT NULL")
+    private String apikey;
+
     public AbstractUser() {
     }
 
     @SQLinformationVariable(name = "password", SQLtype = "VARCHAR(100)", SQLparams = "NOT NULL")
     private String password;
-
 
     public String getNameCompany() {
         return nameCompany;
@@ -41,9 +43,18 @@ public abstract class AbstractUser extends Entity {
         this.password = password;
     }
 
-    public AbstractUser( String nameCompany, String login, String password) {
+    public AbstractUser( String nameCompany, String login, String password, String apikey) {
         this.nameCompany=nameCompany;
         this.login = login;
         this.password = password;
+        this.apikey = apikey;
+    }
+
+    public String getApikey() {
+        return apikey;
+    }
+
+    public void setApikey(String apikey) {
+        this.apikey = apikey;
     }
 }

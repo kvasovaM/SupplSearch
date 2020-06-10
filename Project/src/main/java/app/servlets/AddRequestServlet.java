@@ -34,6 +34,7 @@ public class AddRequestServlet extends HttpServlet {
             requestC.setCustomerNameCompany(customer.getNameCompany());//нужно ли?
             requestC.setCategory(new String(request.getParameter("category").getBytes("ISO-8859-1"), "UTF-8"));
             requestC.setCity(new String(request.getParameter("city").getBytes("ISO-8859-1"), "UTF-8"));
+
             requestC.setDescription(new String(request.getParameter("description").getBytes("ISO-8859-1"), "UTF-8"));
             requestServices.create(requestC.getCustomerId(), requestC.getCustomerNameCompany(), requestC.getCategory(), requestC.getCity(),
                     requestC.getOrderQuantity(), requestC.getOrderFrequency(), requestC.getDescription(), requestC.getPlacementDate());

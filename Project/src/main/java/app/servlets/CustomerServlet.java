@@ -18,6 +18,8 @@ public class CustomerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Customer> customers = customerServices.getAll();
 
+        String filterNameCompany = req.getParameter("nameCompany");
+
         List<String> nameCompany = new ArrayList<>();
 
         List<String> aboutCompany = new ArrayList<>();
@@ -26,6 +28,9 @@ public class CustomerServlet extends HttpServlet {
         String str = "";
         for (Customer u : customers)
         {
+            if (filterNameCompany != null && !filterNameCompany.isEmpty() && !u.getNameCompany().contains(filterNameCompany))
+                continue;
+
             str += "<tr><td>" +
                     u.getNameCompany() + "</td><td>" +
                     u.getAboutCompany() + "</td><td>" +
