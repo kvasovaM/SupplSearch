@@ -1,16 +1,17 @@
 # SupplSearch
-Веб-приложение для поиска поставщиков и поставок SupplSearch
+Веб-приложение для поиска поставщиков и предложения поставок SupplSearch
 
 Над проектом работают:
-- Квасова Мария
-- Акиньшина Анна
+- Квасова Мария, 2 группа
+- Акиньшина Анна, 2 группа
 
 ## Документация: 
-* [Отчет по ролям pdf](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Отчет%20по%20ролям.pdf)
-* [ТЗ pdf](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Техническое%20задание.pdf)
-* [ТЗ docx](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Техническое%20задание.docx)
-* [Курсовой проект pdf](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Курсовой%20проект.pdf)
-* [Курсовой проект docx](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Курсовой%20проект.docx)
+
+* [ТЗ](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Техническое%20задание.pdf)
+* [Курсовой проект](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Курсовой%20проект.pdf)
+* [Отчет по ролям](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/Отчет%20по%20ролям.pdf)
+* [Презентация](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/презентация.pdf)
+
 
 ## Ссылки:
 
