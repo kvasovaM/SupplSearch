@@ -16,7 +16,7 @@
 
 * [Презентация](https://github.com/kvasovaM/SupplSearch/blob/master/Documents/презентация.pdf)
 * [Демо видео](https://yadi.sk/d/ioQgPIHhGpQ1Sw)
-* [Видео выступления]()
+* [Видео выступления](https://yadi.sk/d/t3Shngz_HGeiTA/Видео-презентация.mp4)
 
 
 ## Ссылки:
