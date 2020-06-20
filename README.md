@@ -26,6 +26,5 @@
 * [Swagger](https://suppl-search.site/api/ui)
 
 К Swagger:
-API-ключи
-f5561faf6ce3d53ffcdec0c155243125 - покупатель
-bc03658f8d1cd5a92491cdf8111552b5 - поставщик
+<li>- f5561faf6ce3d53ffcdec0c155243125 - покупатель
+<li>- bc03658f8d1cd5a92491cdf8111552b5 - поставщик
