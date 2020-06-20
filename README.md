@@ -23,4 +23,9 @@
 
 * [Trello](https://trello.com/b/96hKmHXz/проект-по-тп)
 * [Miro](https://miro.com/app/board/o9J_kvWp8H8=/)
-* [Swagger](https://s284996.savps.ru/api/ui)
+* [Swagger](https://suppl-search.site/api/ui)
+
+К Swagger:
+API-ключи
+f5561faf6ce3d53ffcdec0c155243125 - покупатель
+bc03658f8d1cd5a92491cdf8111552b5 - поставщик
